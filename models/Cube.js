@@ -7,6 +7,7 @@ const cubeSchema = new schema({
     imageUrl: String,
     difficultyLevel: Number,
     accessory: [{type: mongoose.Schema.Types.ObjectId, ref: 'attatched'}],
+    creatorId: [{type: String, required: true}],
 });
 
 const Cube = mongoose.model('Cube', cubeSchema);
