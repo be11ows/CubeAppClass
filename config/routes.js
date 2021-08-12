@@ -14,6 +14,8 @@ const attachAccControlGET = require('../controllers/attachAccControlGET');
 const four04Control = require('../controllers/four04Control');
 const createControlPOST = require('../controllers/createControlPOST');
 const createAccControlPOST = require('../controllers/createAccControlPOST');
+const attachAccControlPOST = require('../controllers/attachAccControlPOST');
+
 
 module.exports = (app) => {
 

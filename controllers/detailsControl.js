@@ -12,9 +12,18 @@ module.exports = detailsControl = (req, res) => {
             if (err) return console.error(err);
         })
         .then(response => {
+
+            let attachedArr = [];
+
+            response.forEach( collectionItem => {
+                if(cube.accessory.includes(collectionItem._id)){
+                    attachedArr.push(collectionItem);
+                } 
+            });
+
             res.render("details", {
                 cube,
-                response,
+                attachedArr,
             });
         });
     });		

@@ -15,9 +15,19 @@ module.exports = attachAccControlGET = (req, res) => {
                 if (err) return console.error(err);
             })
             .then(response => {
+
+                let attachedAcc;
+
+                if(response.length == cube.accessory.length) {
+                    attachedAcc = true;
+                } else {
+                    attachedAcc = false;
+                }
+
                 res.render("attachAccessory", {
                     cube,
                     response,
+                    attachedAcc
                 });
             });
         });				

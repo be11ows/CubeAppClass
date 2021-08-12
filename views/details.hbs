@@ -28,9 +28,10 @@
                 <a class="btn" href="/">Back</a>
                 <a class="btn" href="/attach/accessory/{{_id}}">Attach Accessory</a>
             </div>
+            {{/with}}
             <h2>Accessories</h2>
             <div class="accessories">
-                {{#each response}}
+                {{#each attachedArr}}
                 <div class="accessory">
                     <img src="{{imageUrl}}" alt="stickerName">
                     <h3>{{name}}</h3>
@@ -47,11 +48,12 @@
                     <h3>Accessory Name</h3>
                     <p>Accessory Description</p>
                 </div> --}}
+                {{#unless attachedArr}}
                 <h3 class="italic">This cube has no accessories yet...</h3>
+                {{/unless}}
             </div>
         </main>
     </div>
-    {{/with}}
     <footer>@Cubicle: Exercise for Express.js and Handlebars</footer>
 </body>
 </html>
