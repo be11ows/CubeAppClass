@@ -2,8 +2,7 @@ const express = require('express');
 const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 // const path = require('path');
-// const app = express();
-
+const cookieParser = require('cookie-parser');
 
 module.exports = (app) => {
     // todo: setup the view engine
@@ -18,6 +17,8 @@ module.exports = (app) => {
 
     // todo: setup the body parser
     app.use(bodyParser.urlencoded({extended: true }));
+
+    app.use(cookieParser());
 
     // todo: setup static files
     app.use(express.static("static"));
