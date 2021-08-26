@@ -24,6 +24,8 @@ bcrypt.genSalt(saltRounds, (err, salt) => {
 require('./config/express')(app);
 require('./config/routes')(app);
 
+require('dotenv').config();
+
 mongoose.connect('mongodb+srv://dbUser:dbUserPassword@cluster0.dgawe.mongodb.net/cubeApp?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true});
 
 const db = mongoose.connection;

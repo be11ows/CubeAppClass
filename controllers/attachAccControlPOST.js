@@ -4,9 +4,9 @@ const Accessory = require('../models/Accessory');
 
 module.exports = attachAccControlPOST = (req, res) => {
 
-    console.log(req);
-
     // retrieve value of the selection menu (chosen accessory)
+    console.log('this is req.body ', req.body);  // { accessory: 'pint size' }
+    // console.log('this is req ', req);
     const selectedAccessory = req.body.accessory;
 
     // retrieve current cube's id from the "/:id" parameter in the url path
